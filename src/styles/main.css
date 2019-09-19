@@ -20,6 +20,7 @@
 /* Objects – class-based selectors which define undecorated design patterns, for example media object known from OOCSS */
 
 /* Components – specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components */
+@import 'components/playground.css';
 
 /* Utilities – utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class */
 @import 'utilities/floats.css';

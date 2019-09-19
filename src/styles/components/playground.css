@@ -1,0 +1,56 @@
+.playground-wrapper {
+  position: relative;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-image: url('https://fantasy.premierleague.com/static/media/pitch.6892d4e8.svg');
+}
+.playground-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #353535;
+  z-index: -1;
+}
+.playground-row {
+  position: absolute;
+  height: 33.333vh;
+  width: 52%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &-1 {
+    top: 0;
+  }
+  &-2 {
+    top: 33.33%;
+  }
+  &-3 {
+    top: 66.66%;
+  }
+}
+
+.player-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.playground-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33vh;
+}
+.playground-player button {
+  width: 150px;
+  height: 120px;
+  font-size: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  background-image: url('/images/shirt-default.png');
+  background-size: contain;
+}
