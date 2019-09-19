@@ -42,6 +42,7 @@
   justify-content: center;
   align-items: center;
   height: 33vh;
+  flex-direction: column;
 }
 .playground-player button {
   width: 150px;
@@ -53,4 +54,11 @@
   border: none;
   background-image: url('/images/shirt-default.png');
   background-size: contain;
+  cursor: pointer;
+}
+.player-name {
+  background-color: rgba(0, 150, 74, 0.9);
+  color: #fff;
+  font-weight: 500;
+  padding: 0 10px;
 }
