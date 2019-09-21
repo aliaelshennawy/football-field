@@ -5,7 +5,7 @@ const players = {
   init() {
     this.cacheDom();
     this.getSelectValue();
-    this.playerPopup();
+    this.getPlayersList();
   },
   cacheDom() {
     var defenders = document.querySelectorAll('.defenders');
@@ -64,13 +64,20 @@ const players = {
         break;
     }
   },
-  playerPopup() {
+  getPlayersList() {
     const { playersApi } = window;
     $.ajax({
       url: playersApi,
       method: 'GET',
       success: result => {
-        // JSON data array
+        console.log(Object.entries(result));
+        var arrayOfDefenders = Object.values(result)[0];
+        var arrayOfMidFielders = Object.values(result)[1];
+        var arrayOfAttackers = Object.values(result)[2];
+
+        arrayOfDefenders.forEach(arrayItem => {
+          $('#player-table').append('<tr><td>' + arrayItem.name + '</td></tr>');
+        });
         console.log(result);
       },
       error: err => {
