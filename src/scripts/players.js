@@ -65,7 +65,18 @@ const players = {
     }
   },
   playerPopup() {
-    // $('#login-form').modal();
+    const { playersApi } = window;
+    $.ajax({
+      url: playersApi,
+      method: 'GET',
+      success: result => {
+        // JSON data array
+        console.log(result);
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
   }
 };
 
