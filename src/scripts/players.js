@@ -1,8 +1,11 @@
 import $ from 'jquery';
+import jqueryModal from 'jquery-modal';
+
 const players = {
   init() {
     this.cacheDom();
     this.getSelectValue();
+    this.playerPopup();
   },
   cacheDom() {
     var defenders = document.querySelectorAll('.defenders');
@@ -25,17 +28,17 @@ const players = {
     $('.forwards').empty();
     for (var i = 0; i < defenders; i++) {
       $('.defenders').append(`<div class='playground-player'>
-      <button> Player ${i} </button>   
+      <a  href="#player-options" class="defender-btn" rel="modal:open"> Player ${i} </a>   
       <p class="player-name"> Add Defender ${i}`);
     }
     for (var i = 0; i < midfielders; i++) {
       $('.midfielders').append(`<div class='playground-player'>
-      <button> Player ${i} </button>   
+      <a  href="#player-options" class="defender-btn" rel="modal:open"> Player ${i} </a>  
       <p class="player-name"> Add Midfielder`);
     }
     for (var i = 0; i < attackers; i++) {
       $('.forwards').append(`<div class='playground-player'>
-      <button> Player ${i} </button>   
+      <a  href="#player-options" class="defender-btn" rel="modal:open"> Player ${i} </a>  
       <p class="player-name"> Add Forwards`);
     }
   },
@@ -61,7 +64,9 @@ const players = {
         break;
     }
   },
-  playerPopup() {}
+  playerPopup() {
+    // $('#login-form').modal();
+  }
 };
 
 export default players;

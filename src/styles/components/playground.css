@@ -44,7 +44,7 @@
   height: 33vh;
   flex-direction: column;
 }
-.playground-player button {
+.playground-player a {
   width: 150px;
   height: 120px;
   font-size: 0;

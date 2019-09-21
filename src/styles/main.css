@@ -2,6 +2,9 @@
 @import 'settings/fonts.css';
 @import 'settings/colors.css';
 
+/* Vendors */
+@import '../../node_modules/jquery-modal/jquery.modal.css';
+
 /* Tools – globally used mixins and functions. It’s important not to output any CSS in the first 2 layers. */
 
 /* Functions */
