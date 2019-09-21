@@ -3,17 +3,8 @@ import jqueryModal from 'jquery-modal';
 
 const players = {
   init() {
-    this.cacheDom();
     this.getSelectValue();
     this.getPlayersList();
-  },
-  cacheDom() {
-    var defenders = document.querySelectorAll('.defenders');
-    var midfielders = document.querySelectorAll('.midfielders');
-    var attackers = document.querySelectorAll('.forwards');
-    // console.log(defenders[0].childElementCount);
-    // console.log(midfielders[0].childElementCount);
-    // console.log(attackers[0].childElementCount);
   },
   getSelectValue() {
     var selectFormation = document.getElementById('select-formation');
@@ -75,21 +66,32 @@ const players = {
         var arrayOfMidFielders = Object.values(result)[1];
         var arrayOfAttackers = Object.values(result)[2];
         arrayOfDefenders.forEach(arrayItem => {
-          $('#defenders').append('<tr><td>' + arrayItem.name + '</td></tr>');
+          $('#defenders').append('<tr><td class="choose-player">' + arrayItem.name + '</td></tr>');
         });
         arrayOfMidFielders.forEach(arrayItem => {
           $('#midfielders').append('<tr><td>' + arrayItem.name + '</td></tr>');
         });
         arrayOfAttackers.forEach(arrayItem => {
-          $('#attackers').append('<tr><td>' + arrayItem.name + '</td></tr>');
+          $('#attackers').append(
+            `<tr><td  data-player-avatar=${arrayItem.avatar} data-player-name=${arrayItem.name}>${arrayItem.name}</td></tr>`
+          );
         });
-        console.log(result);
+        this.selectPlayer();
       },
       error: err => {
         console.log(err);
       }
     });
-  }
+  },
+  selectPlayer() {
+    $('#attackers td').on('click', function() {
+      var playerName = $(this).attr('data-player-name');
+      var playerAvatar = $(this).attr('data-player-avatar');
+      console.log(playerName);
+      console.log(playerAvatar);
+    });
+  },
+  updateUiWithPlayer() {}
 };
 
 export default players;
