@@ -81,3 +81,10 @@
 .select-css::-ms-expand {
   display: none;
 }
+.players-list {
+  background: #fff;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  top: 0;
+}

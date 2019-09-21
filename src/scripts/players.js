@@ -28,17 +28,17 @@ const players = {
     $('.forwards').empty();
     for (var i = 0; i < defenders; i++) {
       $('.defenders').append(`<div class='playground-player'>
-      <a  href="#player-options" class="defender-btn" rel="modal:open"> Player ${i} </a>   
+      <a  href="#defenders-modal" class="defender-btn" rel="modal:open"> Player ${i} </a>   
       <p class="player-name"> Add Defender ${i}`);
     }
     for (var i = 0; i < midfielders; i++) {
       $('.midfielders').append(`<div class='playground-player'>
-      <a  href="#player-options" class="defender-btn" rel="modal:open"> Player ${i} </a>  
+      <a  href="#midfielders-modal" class="defender-btn" rel="modal:open"> Player ${i} </a>  
       <p class="player-name"> Add Midfielder`);
     }
     for (var i = 0; i < attackers; i++) {
       $('.forwards').append(`<div class='playground-player'>
-      <a  href="#player-options" class="defender-btn" rel="modal:open"> Player ${i} </a>  
+      <a  href="#attackers-modal" class="attacker-btn" rel="modal:open"> Player ${i} </a>  
       <p class="player-name"> Add Forwards`);
     }
   },
@@ -74,9 +74,14 @@ const players = {
         var arrayOfDefenders = Object.values(result)[0];
         var arrayOfMidFielders = Object.values(result)[1];
         var arrayOfAttackers = Object.values(result)[2];
-
         arrayOfDefenders.forEach(arrayItem => {
-          $('#player-table').append('<tr><td>' + arrayItem.name + '</td></tr>');
+          $('#defenders').append('<tr><td>' + arrayItem.name + '</td></tr>');
+        });
+        arrayOfMidFielders.forEach(arrayItem => {
+          $('#midfielders').append('<tr><td>' + arrayItem.name + '</td></tr>');
+        });
+        arrayOfAttackers.forEach(arrayItem => {
+          $('#attackers').append('<tr><td>' + arrayItem.name + '</td></tr>');
         });
         console.log(result);
       },
