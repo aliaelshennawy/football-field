@@ -1,6 +1,7 @@
 .playground-wrapper
   .select-formation-wrapper
-    select
+    select.select-css#select-formation
+      option(selected value="") Choose Formation
       option(value="4-4-2") 4-4-2
       option(value="4-3-3") 4-3-3
       option(value="5-4-1") 5-4-1
@@ -8,41 +9,8 @@
       option(value="3-4-3") 3-4-3
       option(value="3-5-2") 3-5-2
   .playground-row.playground-row-1
-    .player-wrapper
-      .playground-player
-        button Player x  
-        p.player-name Add Defender
-      .playground-player
-        button Player x
-        p.player-name Add Defender
-      .playground-player
-        button Player x
-        p.player-name Add Defender
-      .playground-player
-        button Player x
-        p.player-name Add Defender
+    .player-wrapper.defenders
   .playground-row.playground-row-2
-    .player-wrapper
-      .playground-player
-        button Player x
-        p.player-name Add midfielder
-      .playground-player
-        button Player x
-        p.player-name Add midfielder
-      .playground-player
-        button Player x
-        p.player-name Add midfielder
+    .player-wrapper.midfielders
   .playground-row.playground-row-3
-    .player-wrapper
-      .playground-player
-        button Player x
-        p.player-name Add Forward
-      .playground-player
-        button Player x
-        p.player-name Add Forward
-      .playground-player
-        button Player x
-        p.player-name Add Forward
-      .playground-player
-        button Player x
-        p.player-name Add Forward
+    .player-wrapper.forwards

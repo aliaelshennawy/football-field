@@ -67,7 +67,10 @@
     "vinyl-source-stream": "^2.0.0",
     "workbox-build": "^3.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "venobox": "^1.8.6"
+  },
   "browserslist": [
     "defaults",
     "not ie < 11"
